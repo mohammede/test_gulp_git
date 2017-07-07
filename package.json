@@ -3,5 +3,9 @@
   "version": "0.0.1",
   "description": "this is first porject on gulp and git",
   "author": "mohammed echariq",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  }
 }

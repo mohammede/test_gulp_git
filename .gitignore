@@ -4,3 +4,5 @@ ehthumbs_vista.db
 *.lnk
 .idea/*
 builds/**/images/*
+node_modules/*
+package-lock.json
