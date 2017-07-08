@@ -2,9 +2,11 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     coffee = require('gulp-coffee'),
     concat = require('gulp-concat'),
-    browserify = require('gulp-browserify');
+    browserify = require('gulp-browserify'),
+    compass = require('gulp-compass');
 
 var coffeeResources = ['components/coffee/tagline.coffee'];
+var sassResources = ['components/sass/style.scss'];
 var scriptResources = [
     'components/scripts/pixgrid.js',
     'components/scripts/rclick.js',
@@ -21,4 +23,13 @@ gulp.task('js', function () {
         .pipe(concat('script.js'))
         .pipe(browserify())
         .pipe(gulp.dest('builds/development/js'))
+});
+gulp.task('compass', function () {
+    gulp.src(sassResources)
+        .pipe(compass({
+            sass : 'components/sass',
+            image : 'builds/development/images',
+            style : 'expanded'
+        }))
+        .pipe(gulp.dest('builds/development/css'))
 });
